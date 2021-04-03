@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:at_commons/at_commons.dart';
 import 'package:newserverdemo/screens/chat_screen.dart';
+import 'package:newserverdemo/screens/home_screen2.dart';
 import 'package:newserverdemo/services/server_demo_service.dart';
 import '../utils/at_conf.dart';
 
@@ -108,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           textColor: Colors.white,
                           // TODO: Complete the onPressed function
                           onPressed:  (){
-                            Navigator.pushNamed(context,ChatScreen1.id);
+                            Navigator.pushNamed(context,HomeScreen2.id);
                           },
                         ),
                       ),

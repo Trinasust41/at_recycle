@@ -37,7 +37,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
     return Scaffold(
       key: scaffoldKey,
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(title: Text('Options')),
+      appBar: AppBar(title: Text('Welcome $activeAtSign!')),
       body: Center(
         child: Column(
           children: [
@@ -47,16 +47,16 @@ class _ChatScreen1State extends State<ChatScreen1> {
             Container(
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: Text(
-                'Welcome $activeAtSign!',
-                style: TextStyle(fontSize: 20),
+                'Choose an @sign to chat with',
+                style: TextStyle(fontSize: 25),
               ),
             ),
+            // SizedBox(
+            //   height: 20.0,
+            // ),
+            // Text('Choose an @sign to chat with'),
             SizedBox(
               height: 20.0,
-            ),
-            Text('Choose an @sign to chat with'),
-            SizedBox(
-              height: 10.0,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20.0, right: 20.0),
@@ -94,7 +94,7 @@ class _ChatScreen1State extends State<ChatScreen1> {
               ),
             ),
             SizedBox(
-              height: 50.0,
+              height: 30.0,
             ),
             showOptions ? Column(
               children: [
@@ -104,20 +104,69 @@ class _ChatScreen1State extends State<ChatScreen1> {
                     scaffoldKey.currentState
                         .showBottomSheet((context) => ChatScreen());
                   },
-                  child: Container(
-                    height: 40,
-                    child: Text('Open chat in bottom sheet'),
-                  ),
-                ),
+                  child:Card(
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+      ),
+      color: Colors.cyan[700],
+      elevation: 10,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+
+          Container(
+
+            margin: EdgeInsets.all(10),
+
+            child: FlatButton(
+              child: Text('Open to chat'),
+              color: Colors.cyan[700],
+              textColor: Colors.white,
+              // TODO: Complete the onPressed function
+
+            ),
+          ),
+
+        ],
+      ),
+
+    ),
+
+    ),
+                SizedBox(height: 20.0),
                 FlatButton(
                   onPressed: () {
                     Navigator.pushNamed(context, ChatScreen2.id);
                   },
-                  child: Container(
-                    height: 40,
-                    child: Text('Navigate to chat screen'),
-                  ),
-                )
+                  child: Card(
+                shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+      ),
+      color: Colors.cyan[700],
+      elevation: 10,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+
+          Container(
+
+            margin: EdgeInsets.all(10),
+
+            child: FlatButton(
+              child: Text('Navigation'),
+              color: Colors.cyan[700],
+              textColor: Colors.white,
+              // TODO: Complete the onPressed function
+
+            ),
+          ),
+
+        ],
+      ),
+
+    ),
+
+    )
               ],
             )
                 : Row(
@@ -154,12 +203,42 @@ class _ChatScreen1State extends State<ChatScreen1> {
                           });
                     }
                   },
-                  child: Container(
-                    height: 40,
-                    child: Text('Chat options'),
+                  child:Flexible(
+
+                    fit: FlexFit.loose,
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      color: Colors.cyan[700],
+                      elevation: 10,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+
+                          Container(
+
+                            margin: EdgeInsets.all(10),
+
+                            child: FlatButton(
+                              child: Text('Options'),
+                              color: Colors.cyan[700],
+                              textColor: Colors.white,
+                              // TODO: Complete the onPressed function
+
+                            ),
+                          ),
+
+                        ],
+                      ),
+
+                    ),
+
+
+
                   ),
-                ),
-              ],
+                )
+                  ],
             ),
           ],
         ),

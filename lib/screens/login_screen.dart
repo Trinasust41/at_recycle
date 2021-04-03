@@ -7,17 +7,19 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:at_demo_data/at_demo_data.dart' as at_demo_data;
 import '../utils/at_conf.dart';
 
+String atSign;
+
 class LoginScreen extends StatefulWidget {
   static const String id = 'login';
 
-  // const LoginScreen({Key key}) : super(key: key);
+   const LoginScreen({Key key}) : super(key: key);
 
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  String atSign;
+  //String atSign;
   bool showSpinner = false;
   ServerDemoService _serverDemoService = ServerDemoService.getInstance();
 
